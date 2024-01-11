@@ -39,7 +39,23 @@ const startGame = event => {
     }
 
     
-    
+    //Funzione per rivelare tutte le celle 
+
+    const revealCells = (mines) => {
+        //recupero tutti gli elementi con classe cell
+        const cells = document.querySelectorAll(".cell");
+        
+        //ciclo per girare su ogni elemento cell
+        for(let cell of cells){
+            
+            //condizionale per controllare che cell contenga un numero uguale ad un elemento dell'array che darò alla funzione
+            if(mines.includes(parseInt(cell.innerText))){
+                cell.classList.add("mine");
+            }
+
+            cell.classList.add("clicked");
+        }
+    }
 
     /*************** Effettivo svolgimento  ******************* */
 
@@ -116,6 +132,7 @@ const startGame = event => {
                 cell.classList.add('mine');
                 Shownscore.innerText =`Hai perso, il tuo punteggio è: ${score}`; 
                 isGameOver = true;
+                revealCells (mines);
             } 
 
             else{
@@ -126,6 +143,7 @@ const startGame = event => {
                 if(score === pointsVictory){
                     Shownscore.innerText = "Hai vinto Complimenti";
                     isGameOver = true;
+                    revealCells (mines);
                 }     
             }
 
