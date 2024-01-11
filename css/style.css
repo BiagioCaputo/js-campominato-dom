@@ -1,0 +1,65 @@
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header button{
+    width: 100px;
+}
+
+header select{
+    width:150px;
+}
+
+header img{
+    max-width: 100px;
+}
+
+/*Main*/
+
+main{
+    background-color: #7FFFD4;
+    min-height: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid{
+    display:flex;
+    flex-wrap:wrap;
+    height:800px;
+    width:800px;
+}
+
+#grid .cell{
+    cursor: pointer;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid .cell.clicked{
+    background-color: skyblue;
+}
+
+#grid.easy .cell{
+    width: 10%;
+    height: 10%;
+}
+
+#grid.normal .cell{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+#grid.hard .cell{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+/*Footer*/
+footer{
+    height:100px;
+}
