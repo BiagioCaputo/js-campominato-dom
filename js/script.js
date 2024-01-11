@@ -2,7 +2,8 @@
 const grid = document.getElementById("grid");
 const form = document.querySelector("form");
 const dimension = document.getElementById("difficulty");
-const button = document.querySelector("button")
+const button = document.querySelector("button");
+const Shownscore = document.getElementById("score");
 
 
 
@@ -27,8 +28,8 @@ const startGame = event => {
     //Cambio il testo del bottone
     button.innerText = "Ricomincia";
 
-        //Svuoto la griglia 
-    grid.innerText = "";
+    //Svuoto la griglia 
+    grid.innerText = " ";
 
     //recupero il valore della tendina
 
@@ -40,6 +41,8 @@ const startGame = event => {
     let rows= 10;
 
     let cols = 10;
+
+    let score = 0;
 
     switch(level){
         case 'hard':
@@ -67,11 +70,14 @@ const startGame = event => {
 
             //creo l'interazione al click
         cell.addEventListener('click', () => {
-                
-            cell.classList.toggle('clicked');
-
+            
+            //creo un if per tornare indietro nel caso la casella sia già cliccata
             if(cell.classList.contains('clicked')) return;
-                console.log(i);
+            //aggiungo la classe clicked
+            cell.classList.add('clicked');
+            console.log(i);
+            //incremento il punteggio e lo stampo in pagina
+            Shownscore.innerText = ++score;
             }
             );
 
@@ -83,4 +89,4 @@ const startGame = event => {
     }
 
 //metto in ascolto il form
-form.addEventListener('submit', startGame );
+form.addEventListener('submit', startGame);
