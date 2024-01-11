@@ -45,6 +45,10 @@ main{
     background-color: skyblue;
 }
 
+#grid .cell.mine{
+    background-color: red;
+}
+
 #grid .cell{
     width: 10%;
     height: 10%;
