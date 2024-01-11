@@ -45,7 +45,7 @@ main{
     background-color: skyblue;
 }
 
-#grid.easy .cell{
+#grid .cell{
     width: 10%;
     height: 10%;
 }
